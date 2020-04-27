@@ -20,13 +20,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: AWS ECR Docker Login
-      id: ecr
-      uses: elgohr/ecr-login-action@master
-      with:
-        access_key: ${{ secrets.AWS_ACCESS_KEY }}
-        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        region: ${{ secrets.AWS_REGION }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -34,6 +27,13 @@ jobs:
     - run: npm test
       env:
         CI: true
+    - name: AWS ECR Docker Login
+      id: ecr
+      uses: elgohr/ecr-login-action@master
+      with:
+        access_key: ${{ secrets.AWS_ACCESS_KEY }}
+        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        region: ${{ secrets.AWS_REGION }}
     - name: Publish Docker
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
