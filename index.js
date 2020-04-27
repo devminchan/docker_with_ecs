@@ -7,6 +7,14 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/info", (req, res) => {
+  const envExam = process.env.EXAMPLE || 'null'
+
+  res.json({
+    envExam
+  });
+});
+
 app.listen(3000, () => {
   console.log("Server starting on port 3000");
 });
