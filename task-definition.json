@@ -5,7 +5,7 @@
     "networkMode": "default",
     "containerDefinitions": [
         {
-            "name": "",
+            "name": "mn-run",
             "image": "",
             "repositoryCredentials": {
                 "credentialsParameter": ""
