@@ -83,8 +83,6 @@
   "requiresCompatibilities": ["EC2"],
   "networkMode": null,
   "cpu": "512",
-  "revision": 3,
-  "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
   "volumes": []
