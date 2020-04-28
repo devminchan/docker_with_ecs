@@ -44,6 +44,10 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-env name=IMAGE_TAG::$IMAGE_TAG"
+    - name: Print env
+      run: |
+        echo "IMAGE_TAG: $IMAGE_TAG"
+        echo "IMAGE_TAG: %IMAGE_TAG"
     - name: Render Amazon ECS task definition
       id: render-web-container
       uses: aws-actions/amazon-ecs-render-task-definition@v1
