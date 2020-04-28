@@ -50,7 +50,7 @@ jobs:
       with:
         task-definition: task-definition.json
         container-name: mn-run
-        image: devminchan/mn-app:$IMAGE_TAG
+        image: devminchan/mn-app:latest
     - name: Deploy to Amazon ECS
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
