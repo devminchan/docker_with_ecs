@@ -9,7 +9,7 @@
             "image": "",
             "cpu": 512,
             "memory": 1024,
-            "memoryReservation": 0,
+            "memoryReservation": null,
             "links": null,
             "portMappings": [
                 {
