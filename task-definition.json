@@ -1,59 +1,91 @@
 {
-    "family": "hello-task-def-ec2",
-    "taskRoleArn": "arn:aws:iam::129403376983:role/ecsTaskExecutionRole",
-    "executionRoleArn": "arn:aws:iam::129403376983:role/ecsTaskExecutionRole",
-    "networkMode": null,
-    "containerDefinitions": [
+  "ipcMode": null,
+  "executionRoleArn": "arn:aws:iam::129403376983:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "logConfiguration": null,
+      "entryPoint": null,
+      "portMappings": [
         {
-            "name": "mn-run",
-            "image": "",
-            "cpu": 512,
-            "memory": 1024,
-            "memoryReservation": null,
-            "links": null,
-            "portMappings": [
-                {
-                    "containerPort": 3000,
-                    "hostPort": 80,
-                    "protocol": "tcp"
-                }
-            ],
-            "essential": true,
-            "entryPoint": null,
-            "command": null,
-            "environment": [
-                {
-                    "name": "EXAMPLE",
-                    "value": "example-value-docker"
-                }
-            ],
-            "mountPoints": [],
-            "volumesFrom": [],
-            "linuxParameters": null,
-            "secrets": null,
-            "dependsOn": null,
-            "startTimeout": null,
-            "stopTimeout": null,
-            "hostname": null,
-            "user": null,
-            "workingDirectory": "/home/app",
-            "disableNetworking": true,
-            "privileged": true,
-            "readonlyRootFilesystem": true,
-            "dnsServers": null,
-            "dnsSearchDomains": null,
-            "extraHosts": null,
-            "dockerSecurityOptions": null,
-            "interactive": true,
-            "pseudoTerminal": true,
-            "dockerLabels": null,
-            "ulimits": null,
-            "logConfiguration": null,
-            "healthCheck": null,
-            "systemControls": null,
-            "resourceRequirements": null,
-            "firelensConfiguration": null
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 3000
         }
-    ],
-    "volumes": []
+      ],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [
+        {
+          "name": "EXAMPLE",
+          "value": "example_value_docker"
+        }
+      ],
+      "resourceRequirements": null,
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "secrets": null,
+      "dockerSecurityOptions": null,
+      "memory": 500,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "stopTimeout": null,
+      "image": "",
+      "startTimeout": null,
+      "firelensConfiguration": null,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "mn-run"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "1024",
+  "taskRoleArn": "arn:aws:iam::129403376983:role/ecsTaskExecutionRole",
+  "compatibilities": ["EC2"],
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:129403376983:task-definition/hello-task-def-ec2:3",
+  "family": "hello-task-def-ec2",
+  "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
+    }
+  ],
+  "pidMode": null,
+  "requiresCompatibilities": ["EC2"],
+  "networkMode": null,
+  "cpu": "512",
+  "revision": 3,
+  "status": "ACTIVE",
+  "inferenceAccelerators": null,
+  "proxyConfiguration": null,
+  "volumes": []
 }
