@@ -50,6 +50,9 @@ jobs:
         task-definition: task-definition.json
         container-name: mn-run
         image: ${{ steps.ecr.outputs.registry }}/devminchan/mn-app:latest
+        environments:
+          - name: secret
+          - value: secret-value
     - name: Deploy to Amazon ECS
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
