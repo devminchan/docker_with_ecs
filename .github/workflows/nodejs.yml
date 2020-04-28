@@ -43,14 +43,13 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "::set-env name=IMAGE_TAG::$IMAGE_TAG"
     - name: Render Amazon ECS task definition
       id: render-web-container
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
         container-name: mn-run
-        image: devminchan/mn-app:latest
+        image: ${{ steps.ecr.outputs.registry }}/devminchan/mn-app:latest
     - name: Deploy to Amazon ECS
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
