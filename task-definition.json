@@ -56,7 +56,7 @@
     }
   ],
   "placementConstraints": [],
-  "family": "people",
+  "family": "hello-task-def-ec2",
   "pidMode": "task",
   "requiresCompatibilities": ["EC2"],
   "networkMode": "bridge",
